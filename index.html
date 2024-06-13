@@ -6,39 +6,69 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    body{
+    body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      background-color: #f4f4f4;
     }
     header {
       background-color: #333;
       color: #fff;
       padding: 1rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav ul {
       list-style-type: none;
       padding: 0;
+      margin: 0;
     }
     nav ul li {
       display: inline;
-      margin: 0 10px;
+      margin: 0 15px;
     }
     nav ul li a {
       color: #fff;
       text-decoration: none;
+      font-weight: bold;
     }
     .container {
       padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
-    .about, .portfolio, .contact {
+    section {
       margin-bottom: 2rem;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+    }
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
     .portfolio img {
-      width: 20%;
+      width: 100%;
       height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .portfolio-item {
+      margin-bottom: 2rem;
+    }
+    .portfolio-item p {
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-top: 0.5rem;
     }
     .contact form {
       display: flex;
@@ -46,30 +76,42 @@
     }
     .contact form input, .contact form textarea {
       margin-bottom: 1rem;
-      padding: 0.5rem;
+      padding: 0.75rem;
       font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 500px;
+    }
+    .contact form input[type="submit"] {
+      width: 150px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact form input[type="submit"]:hover {
+      background-color: #555;
     }
     footer {
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: .5rem;
-      position: fixed;
+      padding: 1rem;
+      position: sticky;
       width: 100%;
       bottom: 0;
+      margin-top: 2rem;
     }
-    #submitbtn{
-    width: 100px;
-   }
-   input{
-    width: 200px;
-   }
-   .prime{
-    color: rgb(0, 255, 242);
-   }
-   .prime-red{
-    color:red;
-   }
+    .prime {
+      color: rgb(0, 255, 242);
+      font-weight: bold;
+    }
+    .prime-red {
+      color: red;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -87,20 +129,27 @@
   <div class="container">
     <section id="about" class="about">
       <h2>About Me</h2>
-      <p>Hi, I'm Ash, a 3D Designer. I specialize in product visualisation and animation. Welcome to my portfolio!</p>
+      <p>Hi, I'm Ash, a 3D Designer specializing in product visualization and animation. Welcome to my portfolio! With a passion for creativity and innovation, I transform ideas into visually stunning digital content. Browse through my work and feel free to reach out for collaborations or inquiries.</p>
     </section>
 
     <section id="portfolio" class="portfolio">
       <h2>Portfolio</h2>
       <div class="portfolio-item">
         <img src="/assets/primedrip still0062.jpg" alt="Project 1">
-        <p><span class="prime">Prime</span> <span class="prime-red">Hydration</span>  is a cutting-edge hydration solution designed to fuel your body with essential electrolytes, vitamins, and minerals. Whether you're an athlete pushing your limits, a fitness enthusiast staying active, or someone looking to stay hydrated throughout the day, Prime Hydration offers a refreshing and effective way to maintain optimal hydration levels. Packed with natural flavors and free from artificial additives, Prime Hydration is your go-to drink for peak performance and everyday wellness.</p>
+        <p><span class="prime">Prime</span> <span class="prime-red">Hydration</span> is a cutting-edge hydration solution designed to fuel your body with essential electrolytes, vitamins, and minerals. Whether you're an athlete pushing your limits, a fitness enthusiast staying active, or someone looking to stay hydrated throughout the day, Prime Hydration offers a refreshing and effective way to maintain optimal hydration levels. Packed with natural flavors and free from artificial additives, Prime Hydration is your go-to drink for peak performance and everyday wellness.</p>
       </div>
-      <!-- <div class="portfolio-item">
-        <img src="project2.jpg" alt="Project 2">
-        <p>Project 2 Description</p>
-      </div> -->
-      <!-- Add more portfolio items as needed -->
+      <div class="portfolio-item">
+        <img src="https://p.turbosquid.com/ts-thumb/6f/zHfBWt/ztyyI1vR/apartmentbuilding_172/jpg/1533827902/1920x1080/fit_q87/73065fd22c002261bf02ada7d1c40125b8040474/apartmentbuilding_172.jpg" alt="Project 2">
+        <p>Project 2 Description: An innovative 3D model of a modern urban apartment showcasing advanced lighting techniques and realistic textures.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://d1a9v60rjx2a4v.cloudfront.net/2015/06/04/14_27_36_778_8.jpg" alt="Project 3">
+        <p>Project 3 Description: A 3D animation project illustrating a futuristic vehicle design with dynamic motion graphics and sound effects.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://img.freepik.com/premium-photo/scifi-box-3d-model-concept-art_758367-7004.jpg" alt="Project 4">
+        <p>Project 4 Description: Detailed visualization of a new product prototype, including exploded views and assembly animations.</p>
+      </div>
     </section>
 
     <section id="contact" class="contact">
@@ -109,7 +158,7 @@
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <input id="submitbtn" type="submit" value="Send">
+        <input type="submit" value="Send">
       </form>
     </section>
   </div>
